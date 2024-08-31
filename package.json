@@ -7,6 +7,8 @@
     "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "build-docker": "next build",
+    "start-docker": "node server.js",
     "lint": "next lint",
     "prepare": "husky"
   },

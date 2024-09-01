@@ -7,12 +7,16 @@
     "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "postinstall": "prisma generate",
     "build-docker": "next build",
-    "start-docker": "node server.js",
+    "start-docker": "pnpm run db:migrate && node server.js",
+    "db:migrate": "node scripts/db-migrate.js",
+    "update-db": "prisma migrate deploy",
     "lint": "next lint",
     "prepare": "husky"
   },
   "dependencies": {
+    "@prisma/client": "^5.19.0",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
@@ -37,6 +41,7 @@
     "postcss": "^8",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
+    "prisma": "^5.19.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },

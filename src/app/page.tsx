@@ -1,7 +1,16 @@
+import { prisma } from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-export default function IndexPage() {
+export const dynamic = "force-dynamic";
+
+async function getAllUsers() {
+  return await prisma.user.findMany();
+}
+
+export default async function IndexPage() {
+  const users = await getAllUsers();
+
   return (
     <>
       <header className="flex h-24 items-center justify-center">
@@ -17,6 +26,9 @@ export default function IndexPage() {
           <h1>Hello, Next js & Shadcn UI & Next Auth</h1>
           <br />
           <Button>Start</Button>
+          {users.map((user) => (
+            <div key={user.id}>{user.id}</div>
+          ))}
         </div>
       </main>
     </>

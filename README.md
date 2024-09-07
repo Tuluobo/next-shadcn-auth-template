@@ -2,16 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Install
+
+```bash
+npx create-next-app@latest --use-pnpm -e https://github.com/Tuluobo/next-shadcn-auth-template [your-project-name] 
+```
+
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+cd [your-project-name]
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
